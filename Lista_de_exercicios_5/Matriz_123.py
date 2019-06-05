@@ -36,11 +36,14 @@ larguraDaMatriz = input()
 
 # processos
 while larguraDaMatriz:
-    larguraDaMatriz = int(larguraDaMatriz)
-    matriz          = matrizGerada(larguraDaMatriz)
-    operarNaMatriz(matriz)
-    for i in range(larguraDaMatriz):
-        for j in range(larguraDaMatriz - 1):
-            print("%d"%matriz[i][j], end="")
-        print("%d"%matriz[i][larguraDaMatriz - 1])
-    larguraDaMatriz = input()
+    try:
+        larguraDaMatriz = int(larguraDaMatriz)
+        matriz          = matrizGerada(larguraDaMatriz)
+        operarNaMatriz(matriz)
+        for i in range(larguraDaMatriz):
+            for j in range(larguraDaMatriz - 1):
+                print("%d"%matriz[i][j], end="")
+            print("%d"%matriz[i][larguraDaMatriz - 1])
+        larguraDaMatriz = input()
+    except EOFError:
+        break
