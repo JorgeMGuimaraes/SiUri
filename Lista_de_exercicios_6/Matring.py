@@ -40,8 +40,8 @@ def gerarColuna(vals, col):
 
 def DecriptaMatriz(vals):
     palavra = ""
-    f = gerarColuna(vals, 0)
-    l = gerarColuna(vals, -1)
+    f       = gerarColuna(vals, 0)
+    l       = gerarColuna(vals, -1)
     for i in range(1, len(vals[0]) - 1):
         palavra += chr((f * gerarColuna(vals, i) + l) % 257)
     return palavra
